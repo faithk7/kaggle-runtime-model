@@ -9,8 +9,6 @@ class Dataset(torch.utils.data.Dataset):
         self.create_dataset()
     
     
-
-
 if __name__ == '__main__':
     print("testing out the dataset creation")
     data_dir = "/Users/kaiqu/Desktop/kaggle-runtime-optimization/dataset"
