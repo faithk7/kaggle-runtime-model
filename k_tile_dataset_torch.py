@@ -242,7 +242,7 @@ class NpzDatasetPartition:
 
 
 def get_npz_dataset(
-    root_path: str, min_train_configs=-1, cache_dir: "None | str" = None
+    root_path: str, min_configs=-1, cache_dir: "None | str" = None
 ) -> NpzDataset:
     """Returns {train, test, validation} partitions of tiles dataset collection.
 
@@ -252,7 +252,7 @@ def get_npz_dataset(
     Args:
         root_path: Path where dataset lives. It must have subdirectories 'train',
         'test' and 'valid'.
-        min_train_configs: If > 0, then tile examples will be filtered to have at
+        min_configs: If > 0, then tile examples will be filtered to have at
         least this many configurations (features and runtimes).
         cache_dir: If given, the many files for each of {train, test, validation}
         will be stored as one file (makes loading faster, for future runs).
@@ -262,7 +262,7 @@ def get_npz_dataset(
         # Get the train split from the given root path, with a minimum number of configurations, and cache directory.
         train=get_npz_split(
             os.path.join(root_path, "train"),
-            min_configs=min_train_configs,
+            min_configs=min_configs,
             cache_dir=cache_dir,
         ),
         # Get the validation split from the given root path, and cache directory.

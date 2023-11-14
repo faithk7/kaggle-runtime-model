@@ -78,7 +78,7 @@ class PairwiseHingeLoss(nn.Module):
 # Dictionary of loss functions
 LOSS_DICT = {
     "ListMLELoss": ListMLELoss(temperature=10),
-    "PairwiseHingeLoss": PairwiseHingeLoss(temperature=10),
+    "PairwiseHingeLoss": PairwiseHingeLoss(margin=10),
     "MSE": nn.MSELoss(),
 }
 
